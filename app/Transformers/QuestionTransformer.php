@@ -12,7 +12,7 @@ use SON\Models\Question;
  */
 class QuestionTransformer extends TransformerAbstract
 {
-    protected $defaultIncludes = ['language'];
+
     /**
      * Transform the \Question entity
      * @param \Question $model
@@ -27,10 +27,6 @@ class QuestionTransformer extends TransformerAbstract
             'created_at' => $model->created_at,
             'updated_at' => $model->updated_at
         ];
-    }
-
-    public function includeLanguage(Question $model){
-        return $this->item($model->language, new LanguageTransformer());
     }
 
 }

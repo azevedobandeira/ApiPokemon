@@ -19,5 +19,4 @@ class Language extends Model implements Transformable
     ];
 
 
-
 }
