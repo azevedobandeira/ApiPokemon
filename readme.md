@@ -8,4 +8,4 @@ user: root
 password:
 
 devera ser cofigurado no arquivo .env
-api/documentation listara todos rest.
+api/documentation listara todos rest .
