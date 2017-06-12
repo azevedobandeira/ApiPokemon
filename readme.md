@@ -7,5 +7,5 @@ BD Name: Laravel
 user: root
 password:
 
-devera ser comfigurado no arquivo .env
+devera ser cofigurado no arquivo .env
 api/documentation listara todos rest.
