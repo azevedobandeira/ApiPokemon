@@ -18,7 +18,7 @@ Route::group(['middleware' => 'cors'], function(){
 
     Route::group(['middleware' => ['jwt.auth', 'tenant'] ], function () {
         Route::post('logout', 'Api\AuthController@logout');
-        Route::resource('pokemons', 'Api\PokemonsController', ['except' => ['create', 'edit']]);
+        Route::resource('pokemon', 'Api\PokemonsController', ['except' => ['create', 'edit']]);
         Route::resource('language', 'Api\LanguagesController', ['except' => ['create', 'edit']]);
     });
 });
