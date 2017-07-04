@@ -14,11 +14,11 @@
 Route::group(['middleware' => 'cors'], function(){
     Route::post('login', 'Api\AuthController@login');
     Route::post('refresh_token', 'Api\AuthController@refreshToken');
-    Route::post('users', 'Api\UsersController@store');
+    Route::post('cadastro', 'Api\UsersController@store');
 
     Route::group(['middleware' => ['jwt.auth', 'tenant'] ], function () {
         Route::post('logout', 'Api\AuthController@logout');
-        Route::resource('question', 'Api\QuestionsController', ['except' => ['create', 'edit']]);
+        Route::resource('pokemons', 'Api\PokemonsController', ['except' => ['create', 'edit']]);
         Route::resource('language', 'Api\LanguagesController', ['except' => ['create', 'edit']]);
     });
 });

@@ -9,7 +9,7 @@ use Tymon\JWTAuth\Exceptions\JWTException;
 class AuthController extends Controller
 {
     /**
-     * @SWG\Info(title="Bertran - Question API", version="0.0.1")
+     * @SWG\Info(title="Bertran - Pokemons API", version="0.0.1")
      */
 
 

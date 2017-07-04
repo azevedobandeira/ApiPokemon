@@ -21,17 +21,14 @@ $factory->define(\SON\Models\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
-$factory->define(SON\Models\Question::class, function (Faker\Generator $faker) {
+$factory->define(SON\Models\Pokemons::class, function (Faker\Generator $faker) {
 
     return [
-        'name' => $faker->name
-    ];
-});
-$factory->define(SON\Models\Language::class, function (Faker\Generator $faker) {
+        'name'        => $faker->name,
+        'tipo'        => $faker->safeColorName,
+        'poderatack'  => rand(10,1500),
+        'poderdefesa' => rand(10,2500),
+        'agilidade'   => rand(50,500),
 
-    return [
-        'choes' => $faker->name,
-        'votes' => rand(110,5000),
-        'question_id' => rand(1,2)
     ];
 });

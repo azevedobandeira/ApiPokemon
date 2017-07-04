@@ -4,16 +4,16 @@ namespace SON\Repositories;
 
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
-use SON\Presenters\QuestionPresenter;
-use SON\Repositories\QuestionRepository;
-use SON\Models\Question;
-use SON\Validators\QuestionValidator;
+use SON\Presenters\PokemonsPresenter;
+use SON\Repositories\PokemonsRepository;
+use SON\Models\Pokemons;
+
 
 /**
- * Class QuestionRepositoryEloquent
+ * Class PokemonsRepositoryEloquent
  * @package namespace SON\Repositories;
  */
-class QuestionRepositoryEloquent extends BaseRepository implements QuestionRepository
+class PokemonsRepositoryEloquent extends BaseRepository implements PokemonsRepository
 {
     /**
      * Specify Model class name
@@ -22,12 +22,12 @@ class QuestionRepositoryEloquent extends BaseRepository implements QuestionRepos
      */
     public function model()
     {
-        return Question::class;
+        return Pokemons::class;
     }
 
     public function presenter()
     {
-        return QuestionPresenter::class;
+        return PokemonsPresenter::class;
     }
 
     /**

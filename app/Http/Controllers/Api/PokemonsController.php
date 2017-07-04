@@ -4,21 +4,21 @@ namespace SON\Http\Controllers\Api;
 
 
 use SON\Http\Controllers\Controller;
-use SON\Http\Requests\QuestionRequest;
-use SON\Repositories\QuestionRepository;
+use SON\Http\Requests\PokemonsRequest;
+use SON\Repositories\PokemonsRepository;
 
 
 
-class QuestionsController extends Controller
+class PokemonsController extends Controller
 {
 
     /**
-     * @var QuestionRepository
+     * @var PokemonsRepository
      */
     protected $repository;
 
 
-    public function __construct(QuestionRepository $repository)
+    public function __construct(PokemonsRepository $repository)
     {
         $this->repository = $repository;
 
@@ -29,12 +29,12 @@ class QuestionsController extends Controller
      * Display a listing of the resource.
      *
      * @SWG\GET(
-     *     path="/api/question",
-     *     description="Listar question",
+     *     path="/api/pokemons",
+     *     description="Listar pokemons",
      *     @SWG\Parameter(
      *          name="Authorization", in="header", type="string", description="Bearer __token__"
      *     ),
-     *     @SWG\Response(response="200", description="Coleção de question")
+     *     @SWG\Response(response="200", description="Coleção de pokemons")
      * )
      *
      * @return \Illuminate\Http\Response
@@ -48,8 +48,8 @@ class QuestionsController extends Controller
      * Store a newly created resource in storage.
      *
      * @SWG\POST(
-     *     path="/api/question",
-     *     description="Criar Question",
+     *     path="/api/pokemons",
+     *     description="Criar Pokemons",
      *     @SWG\Parameter(
      *          name="Authorization", in="header", type="string", description="Bearer __token__"
      *     ),
@@ -62,13 +62,13 @@ class QuestionsController extends Controller
      *          ),
      *       )
      *          ),
-     *     @SWG\Response(response="201", description="Question criada")
+     *     @SWG\Response(response="201", description="Pokemons criada")
      * )
-     * @param  CategoryRequest $request
+     * @param  PokemonsRequest $request
      *
      * @return \Illuminate\Http\Response
      */
-    public function store(QuestionRequest $request)
+    public function store(PokemonsRequest $request)
     {
             $question = $this->repository->create($request->all());
             return response()->json($question, 201);
@@ -79,8 +79,8 @@ class QuestionsController extends Controller
      * Update the specified resource in storage.
      *
      * @SWG\PUT(
-     *     path="/api/question/{id}",
-     *     description="Atualizar Question",
+     *     path="/api/pokemons/{id}",
+     *     description="Atualizar Pokemons",
      *     @SWG\Parameter(
      *          name="Authorization", in="header", type="string", description="Bearer __token__"
      *     ),
@@ -90,19 +90,20 @@ class QuestionsController extends Controller
      *     @SWG\Parameter(
      *          name="body", in="body", required=true,
      *       @SWG\Schema(
-     *          @SWG\Property(
-     *              property="name",
-     *              type="string"
-     *          ),
+     *          @SWG\Property( property="name", type="string"),
+     *          @SWG\Property( property="tipo", type="string" ),
+     *          @SWG\Property( property="poderatack", type="integer"),
+     *          @SWG\Property( property="poderdefesa", type="integer"),
+     *          @SWG\Property( property="agilidade", type="integer"),
      *       )
      *          ),
      *     @SWG\Response(response="201", description="Questões atualizada")
      * )
-     * @param QuestionRequest $request
+     * @param PokemonsRequest $request
      * @param  string $id
      * @return Response
      */
-    public function update(QuestionRequest $request, $id)
+    public function update(PokemonsRequest $request, $id)
     {
         $question = $this->repository->update($request->all(),$id);
         return response()->json($question, 200);
@@ -113,8 +114,8 @@ class QuestionsController extends Controller
      * Display the specified resource.
      *
      * @SWG\GET(
-     *     path="/api/question/{id}",
-     *     description="Listar uma question",
+     *     path="/api/pokemons/{id}",
+     *     description="Listar um Pokemon",
      *     @SWG\Parameter(
      *          name="Authorization", in="header", type="string", description="Bearer __token__"
      *     ),
@@ -140,8 +141,8 @@ class QuestionsController extends Controller
      * Remove the specified resource from storage.
      *
      * @SWG\DELETE(
-     *     path="/api/question/{id}",
-     *     description="Excluir question",
+     *     path="/api/pokemons/{id}",
+     *     description="Excluir pokemons",
      *     @SWG\Parameter(
      *          name="Authorization", in="header", type="string", description="Bearer __token__"
      *     ),

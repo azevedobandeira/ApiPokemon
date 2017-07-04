@@ -5,10 +5,10 @@ namespace SON\Repositories;
 use Prettus\Repository\Contracts\RepositoryInterface;
 
 /**
- * Interface QuestionRepository
+ * Interface PokemonsRepository
  * @package namespace SON\Repositories;
  */
-interface QuestionRepository extends RepositoryInterface
+interface PokemonsRepository extends RepositoryInterface
 {
     //
 }

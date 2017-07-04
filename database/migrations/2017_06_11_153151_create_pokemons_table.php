@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateQuestionsTable extends Migration
+class CreatePokemonsTable extends Migration
 {
 
 	/**
@@ -13,11 +13,18 @@ class CreateQuestionsTable extends Migration
 	 */
 	public function up()
 	{
-		Schema::create('questions', function(Blueprint $table) {
+		Schema::create('pokemons', function(Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->timestamps();
+            $table->string('tipo');
+            $table->string('poderatack');
+            $table->string('poderdefesa');
+            $table->string('agilidade');
+            $table->timestamps(false);
+
 		});
+
+
 	}
 
 	/**
@@ -27,7 +34,7 @@ class CreateQuestionsTable extends Migration
 	 */
 	public function down()
 	{
-		Schema::drop('questions');
+		Schema::drop('pokemons');
 	}
 
 }

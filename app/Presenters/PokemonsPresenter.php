@@ -2,15 +2,15 @@
 
 namespace SON\Presenters;
 
-use SON\Transformers\QuestionTransformer;
+use SON\Transformers\PokemonsTransformer;
 use Prettus\Repository\Presenter\FractalPresenter;
 
 /**
- * Class QuestionPresenter
+ * Class PokemonsPresenter
  *
  * @package namespace SON\Presenters;
  */
-class QuestionPresenter extends FractalPresenter
+class PokemonsPresenter extends FractalPresenter
 {
     /**
      * Transformer
@@ -19,6 +19,6 @@ class QuestionPresenter extends FractalPresenter
      */
     public function getTransformer()
     {
-        return new QuestionTransformer();
+        return new PokemonsTransformer();
     }
 }

@@ -3,29 +3,31 @@
 namespace SON\Transformers;
 
 use League\Fractal\TransformerAbstract;
-use SON\Models\Language;
-use SON\Models\Question;
+use SON\Models\Pokemons;
 
 /**
- * Class QuestionTransformer
+ * Class PokemonsTransformer
  * @package namespace SON\Transformers;
  */
-class QuestionTransformer extends TransformerAbstract
+class PokemonsTransformer extends TransformerAbstract
 {
 
     /**
-     * Transform the \Question entity
-     * @param \Question $model
+     * Transform the \Pokemons entity
+     * @param \Pokemons $model
      *
      * @return array
      */
-    public function transform(Question $model)
+    public function transform(Pokemons $model)
     {
         return [
-            'id'         => (int) $model->id,
-            'name'       => (string) $model->name,
-            'created_at' => $model->created_at,
-            'updated_at' => $model->updated_at
+            'id'          => (int)    $model->id,
+            'name'        => (string) $model->name,
+            'tipo'        => (string) $model->tipo,
+            'poderatack'  => (int)    $model->poderatack,
+            'poderdefesa' => (int)    $model->poderdefesa,
+            'agilidade'   => (int)    $model->agilidade
+
         ];
     }
 

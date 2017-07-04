@@ -24,8 +24,7 @@ class RepositoryServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind(\SON\Repositories\UserRepository::class, \SON\Repositories\UserRepositoryEloquent::class);
-        $this->app->bind(\SON\Repositories\QuestionRepository::class, \SON\Repositories\QuestionRepositoryEloquent::class);
-        $this->app->bind(\SON\Repositories\LanguageRepository::class, \SON\Repositories\LanguageRepositoryEloquent::class);
+        $this->app->bind(\SON\Repositories\PokemonsRepository::class, \SON\Repositories\PokemonsRepositoryEloquent::class);
         //:end-bindings:
     }
 }

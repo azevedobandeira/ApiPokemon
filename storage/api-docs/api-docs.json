@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "title": "Bertran - Question API",
+        "title": "Bertran - Pokemons API",
         "version": "0.0.1"
     },
     "paths": {
@@ -70,10 +70,10 @@
                 }
             }
         },
-        "/api/language": {
+        "/api/pokemons": {
             "get": {
                 "summary": "Display a listing of the resource.",
-                "description": "Listar Language",
+                "description": "Listar pokemons",
                 "parameters": [
                     {
                         "name": "Authorization",
@@ -84,162 +84,13 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Cole\u00e7\u00e3o de language"
+                        "description": "Cole\u00e7\u00e3o de pokemons"
                     }
                 }
             },
             "post": {
                 "summary": "Store a newly created resource in storage.",
-                "description": "Criar Language",
-                "parameters": [
-                    {
-                        "name": "Authorization",
-                        "in": "header",
-                        "description": "Bearer __token__",
-                        "type": "string"
-                    },
-                    {
-                        "name": "body",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "properties": {
-                                "choes": {
-                                    "description": "Store a newly created resource in storage.",
-                                    "type": "string"
-                                },
-                                "votes": {
-                                    "description": "Store a newly created resource in storage.",
-                                    "type": "number"
-                                },
-                                "question_id": {
-                                    "description": "Store a newly created resource in storage.",
-                                    "type": "integer"
-                                }
-                            }
-                        }
-                    }
-                ],
-                "responses": {
-                    "201": {
-                        "description": "Language criada"
-                    }
-                }
-            }
-        },
-        "/api/language/{id}": {
-            "get": {
-                "summary": "Display the specified resource.",
-                "description": "Listar uma categoria",
-                "parameters": [
-                    {
-                        "name": "Authorization",
-                        "in": "header",
-                        "description": "Bearer __token__",
-                        "type": "string"
-                    },
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "required": true,
-                        "type": "integer"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Language encontrada"
-                    }
-                }
-            },
-            "put": {
-                "summary": "Update the specified resource in storage.",
-                "description": "Atualizar language",
-                "parameters": [
-                    {
-                        "name": "Authorization",
-                        "in": "header",
-                        "description": "Bearer __token__",
-                        "type": "string"
-                    },
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "required": true,
-                        "type": "integer"
-                    },
-                    {
-                        "name": "body",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "properties": {
-                                "choes": {
-                                    "description": "Update the specified resource in storage.",
-                                    "type": "string"
-                                },
-                                "votes": {
-                                    "description": "Update the specified resource in storage.",
-                                    "type": "number"
-                                },
-                                "question_id": {
-                                    "description": "Update the specified resource in storage.",
-                                    "type": "integer"
-                                }
-                            }
-                        }
-                    }
-                ],
-                "responses": {
-                    "201": {
-                        "description": "Language atualizada"
-                    }
-                }
-            },
-            "delete": {
-                "summary": "Remove the specified resource from storage.",
-                "description": "Excluir language",
-                "parameters": [
-                    {
-                        "name": "Authorization",
-                        "in": "header",
-                        "description": "Bearer __token__",
-                        "type": "string"
-                    },
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "required": true,
-                        "type": "integer"
-                    }
-                ],
-                "responses": {
-                    "204": {
-                        "description": "No content"
-                    }
-                }
-            }
-        },
-        "/api/question": {
-            "get": {
-                "summary": "Display a listing of the resource.",
-                "description": "Listar question",
-                "parameters": [
-                    {
-                        "name": "Authorization",
-                        "in": "header",
-                        "description": "Bearer __token__",
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Cole\u00e7\u00e3o de question"
-                    }
-                }
-            },
-            "post": {
-                "summary": "Store a newly created resource in storage.",
-                "description": "Criar Question",
+                "description": "Criar Pokemons",
                 "parameters": [
                     {
                         "name": "Authorization",
@@ -263,15 +114,15 @@
                 ],
                 "responses": {
                     "201": {
-                        "description": "Question criada"
+                        "description": "Pokemons criada"
                     }
                 }
             }
         },
-        "/api/question/{id}": {
+        "/api/pokemons/{id}": {
             "get": {
                 "summary": "Display the specified resource.",
-                "description": "Listar uma question",
+                "description": "Listar um Pokemon",
                 "parameters": [
                     {
                         "name": "Authorization",
@@ -294,7 +145,7 @@
             },
             "put": {
                 "summary": "Update the specified resource in storage.",
-                "description": "Atualizar Question",
+                "description": "Atualizar Pokemons",
                 "parameters": [
                     {
                         "name": "Authorization",
@@ -317,6 +168,22 @@
                                 "name": {
                                     "description": "Update the specified resource in storage.",
                                     "type": "string"
+                                },
+                                "tipo": {
+                                    "description": "Update the specified resource in storage.",
+                                    "type": "string"
+                                },
+                                "poderatack": {
+                                    "description": "Update the specified resource in storage.",
+                                    "type": "integer"
+                                },
+                                "poderdefesa": {
+                                    "description": "Update the specified resource in storage.",
+                                    "type": "integer"
+                                },
+                                "agilidade": {
+                                    "description": "Update the specified resource in storage.",
+                                    "type": "integer"
                                 }
                             }
                         }
@@ -330,7 +197,7 @@
             },
             "delete": {
                 "summary": "Remove the specified resource from storage.",
-                "description": "Excluir question",
+                "description": "Excluir pokemons",
                 "parameters": [
                     {
                         "name": "Authorization",

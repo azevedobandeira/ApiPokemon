@@ -4,7 +4,7 @@ namespace SON\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class QuestionRequest extends FormRequest
+class PokemonsRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
